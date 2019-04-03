@@ -1,14 +1,10 @@
 {
-  "name": "firestore-backups-and-export-to-bigquery",
-  "version": "1.0.0",
-  "description": "Cloud Firestore backups and export to BigQuery",
+  "name": "appengine",
   "main": "app.js",
   "scripts": {
     "deploy": "gcloud app deploy app.yaml --version=current",
     "start": "node app.js"
   },
-  "author": "zkohi <kohiandrew@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",

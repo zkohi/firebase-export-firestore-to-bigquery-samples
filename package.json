@@ -1,21 +1,17 @@
 {
-  "name": "firebase-functions-samples",
+  "name": "firebase-export-firestore-to-bigquery-samples",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Export Firebase Authentication users and Cloud Firestore to BigQuery",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/zkohi/firebase-functions-samples.git"
+    "url": "git+ssh://git@github.com/zkohi/firebase-export-firestore-to-bigquery-samples.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "zkohi <kohiandrew@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zkohi/firebase-functions-samples/issues"
+    "url": "https://github.com/zkohi/firebase-export-firestore-to-bigquery-samples/issues"
   },
-  "homepage": "https://github.com/zkohi/firebase-functions-samples#readme",
+  "homepage": "https://github.com/zkohi/firebase-export-firestore-to-bigquery-samples#readme",
   "devDependencies": {
     "prettier": "^1.16.4"
   }

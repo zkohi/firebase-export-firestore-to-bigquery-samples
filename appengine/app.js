@@ -1,3 +1,5 @@
+// Useing Apache-2.0 license code in this code of parts. Author is Google, Inc.
+// https://github.com/firebase/snippets-node/tree/master/firestore/solution-scheduled-backups
 "use strict";
 
 const axios = require("axios");
