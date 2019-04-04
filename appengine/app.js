@@ -1,4 +1,4 @@
-// Useing Apache-2.0 license code in this code of parts. Author is Google, Inc.
+// This software includes the work that is distributed in the Apache License 2.0.
 // https://github.com/firebase/snippets-node/tree/master/firestore/solution-scheduled-backups
 "use strict";
 
