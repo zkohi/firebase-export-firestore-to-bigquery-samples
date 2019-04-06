@@ -1,0 +1,15 @@
+{
+  "name": "appengine",
+  "main": "app.js",
+  "scripts": {
+    "deploy": "gcloud app deploy app.yaml --version=current",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dateformat": "^3.0.3",
+    "express": "^4.16.4",
+    "googleapis": "^39.1.0"
+  }
+}
