@@ -106,9 +106,9 @@ app.get("/cloud-firestore-export-to-bigquery", async (req, res) => {
     Authorization: "Bearer " + accessToken
   };
 
-  const bucket = req.query.bucket;
-  if (!(bucket && bucket.indexOf("gs://") == 0)) {
-    res.status(500).send(`Malformed bucket: ${bucket}`);
+  const outputUriPrefix = req.query.outputUriPrefix;
+  if (!(outputUriPrefix && outputUriPrefix.indexOf("gs://") == 0)) {
+    res.status(500).send(`Malformed outputUriPrefix: ${outputUriPrefix}`);
   }
 
   const collections = req.query.collections;
@@ -123,7 +123,7 @@ app.get("/cloud-firestore-export-to-bigquery", async (req, res) => {
     ? req.query.date
     : dateformat(date, "yyyy-mm-dd");
   const ymd = timestamp.split("-").join("");
-  let path = bucket;
+  let path = outputUriPrefix;
   if (path.endsWith("/")) {
     path += timestamp;
   } else {
