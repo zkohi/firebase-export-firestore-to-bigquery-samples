@@ -21,7 +21,7 @@
 
 #### Cloud SDK
 
-See: [Cloud SDK quickstarts](https://cloud.google.com/sdk/docs/quickstarts/)
+See: [Cloud SDK quickstarts](https://cloud.google.com/sdk/docs/quickstarts)
 
 #### firebase
 
@@ -38,7 +38,7 @@ You must complete the following tasks.
 
 - [Before you begin](https://firebase.google.com/docs/firestore/solutions/schedule-export#before_you_begin)
 - [Configure access permissions](https://firebase.google.com/docs/firestore/solutions/schedule-export#configure_access_permissions)
-  - You should assign the Storage Admin role on your bucket from [Console](https://console.cloud.google.com/storage/browser) if error occurred when you run gsutil
+  - You should assign the Storage Admin role on your bucket using the [GCP Console](https://console.cloud.google.com/storage/browser) if error occurred when you run gsutil
 - Create Cloud Storage bucket for export and import operations(ex: gs://PROJECT-ID_backups-firestore)
 - [Enable Object Lifecycle Management](https://cloud.google.com/storage/docs/managing-lifecycles) for a bucket if you want
 
@@ -86,21 +86,41 @@ Choose the Pub/Sub target and set topic.
 
 Topic is cron-export-user-list-job in this sample code.
 
+Payload string must be not null. But Any string is OK. Because Payload string doesn't be used in this sample code.
+
+You can create the Firebase Authentication User using the Firebase Console if you don't have any the Firebase Authentication User yet. 
+
+You should create the Cloud Firestore Database using the Firebase Console if you don't have created the Cloud Firestore Database yet.
+
+If you create the Cloud Firestore Database then you should select a Locked mode for your Cloud Firestore Security Rules.
+
+Run Cloud Scheduler Job then check Cloud Firestore collection named users using the Firebase Console.
+
 #### Export All Cloud Firestore collections and Specified collections to Cloud Storage
 
-Choose the App Engine HTTP target and set URL.
+Choose the App Engine HTTP target and set URL and Choose Get method.
 
-ex. /cloud-firestore-export?outputUriPrefix=gs://PROJECT-ID_backups-firestore&collections=users,etc
+Ex.
+- /cloud-firestore-export?outputUriPrefix=gs://PROJECT-ID_backups-firestore&collections=users
+- /cloud-firestore-export?outputUriPrefix=gs://PROJECT-ID_backups-firestore&collections=users,etc
+
+Run Cloud Scheduler Job then check Cloud Run Cloud Scheduler Job then check Cloud Storage bucket using the [GCP Console](https://console.cloud.google.com/storage/browser).
 
 #### Export Specified collections to BigQuery(Partitioned tables)
 
-Choose the App Engine HTTP target and set URL.
+Choose the App Engine HTTP target and set URL and Choose Get method.
 
-ex. /cloud-firestore-export-to-bigquery?outputUriPrefix=gs://PROJECT-ID_backups-firestore&collections=users,etc
+Ex.
+- /cloud-firestore-export-to-bigquery?outputUriPrefix=gs://PROJECT-ID_backups-firestore&collections=users
+
+- /cloud-firestore-export-to-bigquery?outputUriPrefix=gs://PROJECT-ID_backups-firestore&collections=users,etc
+
+Run Cloud Scheduler Job then check Cloud Run Cloud Scheduler Job then check BigQuery dataset using the [GCP Console](https://console.cloud.google.com/bigquery).
 
 ## Additional
 
 You can create the table to use [Scheduling queries](https://cloud.google.com/bigquery/docs/scheduling-queries).
+
 You can create the interactive dashboards to use [Data Portal](https://datastudio.google.com/overview).
 
 ## Coution
