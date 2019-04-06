@@ -1,8 +1,8 @@
-# Export Firebase Authentication users and Cloud Firestore to BigQuery
+# Export Firebase Authentication users and Cloud Firestore Collections to BigQuery
 
-- Export Firebase Authentication users to Cloud Firestore
-- Export Cloud Firestore to Cloud Storage
-- Export Cloud Storage to BigQuery(Partitioned tables)
+- Export Firebase Authentication users to Cloud Firestore Collection
+- Export All Cloud Firestore Collections and Specified collections to Cloud Storage
+- Export Specified Cloud Firestore Collections to BigQuery(Partitioned tables)
 
 ## See
 
@@ -80,7 +80,7 @@ npm run deploy
 
 See: [Creating and Configuring Cron Jobs](https://cloud.google.com/scheduler/docs/creating)
 
-#### Export Firebase Authentication users to Cloud Firestore
+#### Export Firebase Authentication users to Cloud Firestore Collection
 
 Choose the Pub/Sub target and set topic.
 
@@ -94,9 +94,9 @@ You should create the Cloud Firestore Database using the Firebase Console if you
 
 If you create the Cloud Firestore Database then you should select a Locked mode for your Cloud Firestore Security Rules.
 
-Run Cloud Scheduler Job then check Cloud Firestore collection named users using the Firebase Console.
+Run Cloud Scheduler Job then check Cloud Firestore Collection named users using the Firebase Console.
 
-#### Export All Cloud Firestore collections and Specified collections to Cloud Storage
+#### Export All Cloud Firestore Collections and Specified collections to Cloud Storage
 
 Choose the App Engine HTTP target and set URL and Choose Get method.
 
@@ -106,7 +106,7 @@ Ex.
 
 Run Cloud Scheduler Job then check Cloud Run Cloud Scheduler Job then check Cloud Storage bucket using the [GCP Console](https://console.cloud.google.com/storage/browser).
 
-#### Export Specified collections to BigQuery(Partitioned tables)
+#### Export Specified Cloud Firestore Collections to BigQuery(Partitioned tables)
 
 Choose the App Engine HTTP target and set URL and Choose Get method.
 
