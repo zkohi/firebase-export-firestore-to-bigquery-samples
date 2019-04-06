@@ -38,9 +38,9 @@ You must complete the following tasks.
 
 - [Before you begin](https://firebase.google.com/docs/firestore/solutions/schedule-export#before_you_begin)
 - [Configure access permissions](https://firebase.google.com/docs/firestore/solutions/schedule-export#configure_access_permissions)
+  - You should assign the Storage Admin role on your bucket from [Console](https://console.cloud.google.com/storage/browser) if error occurred when you run gsutil
 - Create Cloud Storage bucket for export and import operations(ex: gs://PROJECT-ID_backups-firestore)
-- Set lifecycle Cloud Storage bucket for export and import operations if you want
-- [Setting up Cloud IAP access](https://cloud.google.com/iap/docs/app-engine-quickstart#iap-access)
+- [Enable Object Lifecycle Management](https://cloud.google.com/storage/docs/managing-lifecycles) for a bucket if you want
 
 #### BigQuery
 
@@ -66,6 +66,8 @@ npm i
 cd appengine/
 npm run deploy
 ```
+
+- [Setting up Cloud IAP access](https://cloud.google.com/iap/docs/app-engine-quickstart#iap-access)
 
 #### functions
 
